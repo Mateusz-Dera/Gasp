@@ -1,0 +1,11 @@
+[config]
+
+name="Gasp"
+binary_type="local"
+binary="gasp.aar"
+
+[dependencies]
+
+local=[]
+remote=[]
+custom_maven_repos=[]
