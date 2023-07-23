@@ -11,7 +11,10 @@ Useful for porting projects from other engines such as LibGDX.
 [![Version](https://img.shields.io/badge/33-Compile_SDK-green.svg)](https://github.com/Mateusz-Dera/Anim-360)
 
 # Instalation:
-TODO
+1. Download the latest version of the plugin from the releases tab or build it yourself from the sources
+2. If you are building from the sources, rename the output file to gasp.aar
+3. Put "gasp.aar" and "gasp.gdap" into android/plugins folder in your project
+4. In android export options enable Gasp
 
 # Loading SharedPreferences
 |GDScript code|
