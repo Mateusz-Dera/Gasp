@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "GASP"
+rootProject.name = "Gasp"
 include ':app'

@@ -1,6 +1,6 @@
 # Gasp
 ## Godot Android SharedPreferences
-A library that allows loading saved SharedPreferences into Godot Engine 4.1.
+A library that allows reading from and writing to SharedPreferences into Godot Engine 4.1.
 Useful for porting projects from other engines such as LibGDX.
 
 ## Info
@@ -21,7 +21,7 @@ Useful for porting projects from other engines such as LibGDX.
 |:---|
 |```sharedPreferencesName("<name>")```|
 
-## Supported variable types:
+## Get:
 |Type|GDScript code|
 |:---|:---|
 |String|```getString("<name>")```|
@@ -29,12 +29,35 @@ Useful for porting projects from other engines such as LibGDX.
 |Float|```getFloat("<name>")```|
 |Boolean|```getBoolean("<name>")```|
 
+## Put:
+|Type|GDScript code|
+|:---|:---|
+|String|```putString("<name>")```|
+|Integer|```putInt("<name>")```|
+|Float|```putFloat("<name>")```|
+|Boolean|```putBoolean("<name>")```|
+
+## Save:
+|Type|GDScript code|
+|:---|:---|
+|Synchronously|```commit()```|
+|Asynchronously|```apply()```|
+
 ## Example of use:
-GDScript
+### Save
 ```python
 func _ready():
 	var singleton = Engine.get_singleton("Gasp")
-	singleton.sharedPreferencesName("old_game_version_save")
+	singleton.sharedPreferencesName("game_save")
+	singleton.putInt("best", 1)
+	singleton.commit()
+	pass
+```
+### Load
+```python
+func _ready():
+	var singleton = Engine.get_singleton("Gasp")
+	singleton.sharedPreferencesName("game_save")
 	print("Best score:")
 	print(singleton.getInt("best"))
 	pass

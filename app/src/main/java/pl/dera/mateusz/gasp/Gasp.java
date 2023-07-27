@@ -17,6 +17,7 @@ import java.util.Set;
 
 public class Gasp extends GodotPlugin {
     public SharedPreferences sharedPreferences = null;
+    public SharedPreferences.Editor sharedPreferencesEditor = null;
     public Context context = null;
     public Gasp(Godot godot) {
         super(godot);
@@ -28,6 +29,9 @@ public class Gasp extends GodotPlugin {
     public void setSharedPreferences(String name){
         sharedPreferences = context.getSharedPreferences(name, Context.MODE_PRIVATE);
     }
+    public void setSharedPreferencesEditor(){
+        sharedPreferencesEditor = sharedPreferences.edit();
+    }
 
     @NonNull
     @Override
@@ -38,12 +42,13 @@ public class Gasp extends GodotPlugin {
     @NonNull
     @Override
     public List<String> getPluginMethods() {
-        return Arrays.asList("sharedPreferencesName","getString","getInt","getFloat","getBoolean");
+        return Arrays.asList("sharedPreferencesName","getString","getInt","getFloat","getBoolean","putString","putInt","putFloat","putBoolean","commit","apply");
     }
 
     public void sharedPreferencesName(String name){
         setContext();
         setSharedPreferences(name);
+        setSharedPreferencesEditor();
     }
     // GET
     public String getString(String name){
@@ -61,4 +66,29 @@ public class Gasp extends GodotPlugin {
     public boolean getBoolean(String name){
         return sharedPreferences.getBoolean(name, false);
     }
+
+    // PUT
+    public void putString(String name, String value){
+        sharedPreferencesEditor.putString(name, value);
+    }
+    public void putInt(String name, int value){
+        sharedPreferencesEditor.putInt(name, value);
+    }
+
+    public void putFloat(String name, float value){
+        sharedPreferencesEditor.putFloat(name, value);
+    }
+
+    public void putBoolean(String name, boolean value){
+        sharedPreferencesEditor.putBoolean(name, value);
+    }
+    // SAVE
+    public void commit(){
+        sharedPreferencesEditor.commit();
+    }
+
+    public void apply(){
+        sharedPreferencesEditor.apply();
+    }
+
 }
