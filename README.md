@@ -4,7 +4,7 @@ A library that allows reading from and writing to SharedPreferences into Godot E
 Useful for porting projects from other engines such as LibGDX.
 
 ## Info
-[![Version](https://img.shields.io/badge/1.0-Plugin_version-orange.svg)](https://github.com/Mateusz-Dera/Anim-360)
+[![Version](https://img.shields.io/badge/2.0-Plugin_version-orange.svg)](https://github.com/Mateusz-Dera/Anim-360)
 [![Version](https://img.shields.io/badge/4.1-Godot_version-blue.svg)](https://github.com/Mateusz-Dera/Anim-360)
 [![Version](https://img.shields.io/badge/24-Min_SDK-green.svg)](https://github.com/Mateusz-Dera/Anim-360)
 [![Version](https://img.shields.io/badge/33-Target_SDK-green.svg)](https://github.com/Mateusz-Dera/Anim-360)
